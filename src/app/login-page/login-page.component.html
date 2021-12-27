@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+</head>
+<body>
+
+<input type="text">
+  <div class="form-group">
+    <input placeholder="Email"
+           type="text"
+    [(ngModel)]="username">
+    <!--           class="form-control"-->
+
+    </div>
+  <input placeholder="password" type="password" [required]="password" [(ngModel)]="password">
+  <button (click)="login()"> Login</button>
+
+</body>
+</html>
