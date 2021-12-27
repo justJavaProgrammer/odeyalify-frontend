@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>music player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="audio-player.css">
+</head>
+
+<body onload="setRangeValue()">
+<button onclick="setRangeValue()"> Try it</button>
+
+<div class="audio-player">
+  <div class="song-info">
+    <img class="song-cover" id="track_image" src="photo_2021-08-24_15-37-15.jpg">
+    <div class="info">
+      <p id="title">title.mp3</p>
+      <p id="artist">Artist name</p>
+    </div>
+  </div>
+  <div class="button-handlers">
+    <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+    <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+    <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+    <button id="auto" class="auto" onclick="autoplay_switch()"><i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="duration">
+    <div class="chrome">
+      <input id="duration_slider" min="0" max="100" type="range" value="1" onchange="change_duration()"/>
+    </div>
+  </div>
+</div>
+<script src="audio-player.js"></script>
+<script type="text/javascript">
+  function progress() {
+    document.getElementById("duration_slider").oninput = function() {
+      let value = (this.value-this.min)/(this.max-this.min)*100
+      this.style.background = 'linear-gradient(to right, green 0%, green ' + value + '%, #fff ' + value + '%, white 100%)'
+    };
+  }
+</script>
+<script type="text/javascript">
+  function setRangeValue() {
+    let progress = document.getElementById("duration_slider");
+      progress.style.background = 'linear-gradient(to right, green 0%, green 0%, #fff 0%, white 0%)'
+
+  }
+</script>
+</body>
+</html>

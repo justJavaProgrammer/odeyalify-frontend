@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  height: 13%;
+  width: 100%;
+  /*display: none;*/
+  /*align-items: center;*/
+  background: gray;
+}
+
+.button-handlers, .duration {
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+
+.audio-player button {
+  padding: 10px 12px;
+  margin: 0 10px;
+}
+
+/*.right, .left {*/
+/*  position: relative;*/
+/*  height: 100%;*/
+/*  width: 50%;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  flex-direction: column;*/
+/*}*/
+
+/* song image */
+/*.left img {*/
+/*  height: 150px;*/
+/*  width: 150px;*/
+/*  border-radius: 15px;*/
+/*  box-shadow: 1px 0px 20px 12px rgba(240, 240, 240, 0.2);*/
+/*}*/
+
+/* both range slider part */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 30%;
+  outline: none;
+  height: 4px;
+  margin: 0 15px;
+  overflow: hidden;
+}
+input[type='range']::-webkit-slider-runnable-track {
+   height: 10px;
+   -webkit-appearance: none;
+   color: #13bba4;
+   margin-top: -1px;
+ }
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 0;
+  background: #434343;
+}
+#duration_slider {
+  background: linear-gradient(to right, green 0%, green 50%, white 50%, white 100%);
+  /*border: solid 1px green;*/
+  border-radius: 8px;
+  height: 7px;
+  width: 356px;
+  outline: none;
+  /*transition: background 450ms ease-in;*/
+  -webkit-appearance: none;
+}
+.song-cover {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  width: 50px;
+  height:50px;
+}
+.info {
+  position: absolute;
+  left: 80px;
+  top: 25px;
+}
+#play {
+  border-radius: 50%;
+  background-color: white;
+}
+.auto, #pre, #next {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+
+/* volume part */
+.left .volume {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.left .volume p {
+  font-size: 15px;
+}
+
+.left .volume i {
+  cursor: pointer;
+  padding: 8px 12px;
+  background: green;
+}
+
+.left .volume i:hover {
+  background: rgba(245, 245, 245, 0.1);
+}
+
+.volume #volume_show {
+  padding: 8px 12px;
+  margin: 0 5px 0 0;
+  background: rgba(245, 245, 245, 0.1);
+}
+
+
+.right .middle button {
+  border: none;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s;
+  background: rgba(255, 255, 255, 0.1);
+}
