@@ -10,6 +10,8 @@ import {BasicAuthHttpInterceptorService} from "./login-page/service/basic-auth-h
 import { NotFoundComponent } from './not-found/not-found.component';
 import {LoginPageComponent} from "./login-page/login-page.component";
 import { SearchComponent } from './search/search.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { AudioPlayerComponent } from './audio-player/audio-player.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -22,7 +24,9 @@ const routes: Routes = [
     LoginPageComponent,
     HomepageComponent,
     NotFoundComponent,
-    SearchComponent
+    SearchComponent,
+    NavigationComponent,
+    AudioPlayerComponent
   ],
   imports: [
     HttpClientModule,
