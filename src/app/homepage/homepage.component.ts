@@ -13,9 +13,4 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test() {
-    this.service.test().subscribe(value => {
-      console.log(value.artistDto.artistId);
-    });
-  }
 }

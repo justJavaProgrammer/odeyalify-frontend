@@ -22,4 +22,8 @@ export class HttpService {
   public getAlbumById(id: number) {
     return this.httpClient.get<any>("http://localhost:8888/info/album" + id);
   }
+
+  public getUserLikedTracksPlaylist() {
+    return this.httpClient.get<any>("http://localhost:8888/me/playlists/liked")
+  }
 }
