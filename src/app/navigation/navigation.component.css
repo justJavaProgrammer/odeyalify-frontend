@@ -1,0 +1,86 @@
+.body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#menu {
+  position: absolute;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  text-align: start;
+}
+.domain {
+  margin-bottom: 30px;
+}
+.name {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+.home {
+  margin-left: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.home-text {
+  margin-left: 8px;
+
+}
+.search {
+  margin-left: 20px;
+  color: white;
+  font-size: 20px;
+  line-height: 3;
+
+}
+.search-text {
+  margin-left: 8px;
+}
+.library {
+  margin-left: 20px;
+  color: white;
+  font-size: 20px;
+}
+.library-text {
+  margin-left: 8px;
+}
+#collections {
+  margin-left: 20px;
+}
+.playlist-text {
+  margin-left: 8px;
+  font-size: 20px;
+}
+.liked-tracks-text {
+  line-height: 3;
+  margin-left: 8px;
+  font-size: 20px;
+}
+.split-line {
+  color: green;
+  width: 90%;
+}
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color: green;
+}
+
+.user-playlists {
+  overflow: auto;
+  text-align:justify;
+  height: 400px;
+  width: 230px;
+  margin-left: 20px;
+}
+
+
