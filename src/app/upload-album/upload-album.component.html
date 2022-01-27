@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div class="song-files-input">
+  <input type="file"
+         id="files"
+         (change)="handleSongFilesInput($event.target)" multiple accept=".mp3, .ogg">
+</div>
+<div class="album">
+  <input type="file"
+         (change)="handleAlbumImageInput($event.target)" accept="image/*">
+  <img [src]="url" height="200px">
+  <input type="text" id="album-name" autofocus>
+</div>
+
+
+<div class="song-file-description">
+  <label>Add description to your files:</label>
+  <div *ngFor="let file of songs" class="file">
+    {{file.name}} <input class="text-description" type="text">
+  </div>
+</div>
+</body>
+</html>

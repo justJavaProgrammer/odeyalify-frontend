@@ -1,0 +1,30 @@
+.song-files-input {
+  text-align: center;
+}
+[type="file"] {
+  height: 50px;
+  size: auto;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  height: 50px;
+}
+#album-name {
+  padding: 0 10px;
+  width: 300px;
+  height: 30px;
+  border-radius: 20px;
+  border-color: #14a114;
+}
+#files {
+}
+.file {
+  margin-top: 1%;
+}
+.text-description {
+  position: absolute;
+  text-align: center;
+  width: 30%;
+  height: 20px;
+  border-radius: 10px;
+}
