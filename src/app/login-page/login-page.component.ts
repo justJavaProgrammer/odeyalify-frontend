@@ -29,7 +29,6 @@ export class LoginPageComponent implements OnInit {
     // if (this.loginForm.invalid) {
     //   return;
     // }
-    console.log("login user")
     this.loginService.login(this.username, this.password).subscribe(data => {
 
     }, error => {
