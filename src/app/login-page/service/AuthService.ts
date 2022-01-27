@@ -10,19 +10,19 @@ export class AuthService {
   }
 
   getJwtToken() {
-    return sessionStorage.getItem(this.JWT_TOKEN);
+    return localStorage.getItem(this.JWT_TOKEN);
   }
 
   public refreshToken() {
-    const refreshToken = {refreshToken: sessionStorage.getItem('refreshToken')}
+    const refreshToken = {refreshToken: localStorage.getItem('refreshToken')}
     return this.httpClient.post<any>(`${environment.baseUrl}auth/refreshtoken`, refreshToken)
   }
   public saveJWTToken(token: string) {
-    sessionStorage.removeItem(this.JWT_TOKEN);
-    sessionStorage.setItem(this.JWT_TOKEN, token);
+    localStorage.removeItem(this.JWT_TOKEN);
+    localStorage.setItem(this.JWT_TOKEN, token);
   }
   public saveRefreshToken(token: string): void {
-    sessionStorage.removeItem('refreshToken');
-    sessionStorage.setItem('refreshToken', token);
+    localStorage.removeItem('refreshToken');
+    localStorage.setItem('refreshToken', token);
   }
 }

@@ -2,8 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {BehaviorSubject, catchError, filter, Observable, switchMap, take, throwError} from "rxjs";
 import {AuthService} from "./AuthService";
-import {LoginPageService} from "./login-page.service";
-import {error} from "@angular/compiler/src/util";
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class BasicAuthHttpInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (sessionStorage.getItem('token')) {
+    if (localStorage.getItem('token')) {
       req = this.addToken(req, this.authService.getJwtToken())
     }
     return next.handle(req).pipe(
