@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {HttpService} from "../http.service";
 
 @Component({
@@ -7,8 +7,10 @@ import {HttpService} from "../http.service";
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-
-  constructor(private service: HttpService) { }
+  @Input('boss') bossName = 'Alex.jpeg'
+  constructor(private service: HttpService) {
+    this.service.getAlbumById('')
+  }
 
   ngOnInit(): void {
   }

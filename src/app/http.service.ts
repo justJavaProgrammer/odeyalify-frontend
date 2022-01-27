@@ -9,21 +9,22 @@ export class HttpService {
 
   }
 
-  public getArtistById(id: number) {
+  public getArtistById(id: string) {
     return this.httpClient.get<any>("http://localhost:8888/info/artist/" + id);
   }
 
-  public getPlaylistById(id: number) {
+  public getPlaylistById(id: string) {
     return this.httpClient.get<any>("http://localhost:8888/playlist/" + id);
   }
-  public getSongById(id: number) {
-    return this.httpClient.get<any>("http://localhost:8888/info/song" + id);
+  public getSongById(id: string) {
+    return this.httpClient.get<any>("http://localhost:8888/info/song/" + id);
   }
-  public getAlbumById(id: number) {
-    return this.httpClient.get<any>("http://localhost:8888/info/album" + id);
+  public getAlbumById(id: string) {
+    return this.httpClient.get<any>("http://localhost:8888/info/album/" + id);
   }
 
   public getUserLikedTracksPlaylist() {
-    return this.httpClient.get<any>("http://localhost:8888/me/playlists/liked")
+    return this.httpClient.get<any>("http://localhost:8888/me/playlists/liked/")
   }
+
 }
