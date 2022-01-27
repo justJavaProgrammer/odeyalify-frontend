@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  left: 16.3%;
+  top: 0;
+  width: 83.5%;
+  position: absolute;
+  overflow-y: auto;
+  height: 88%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  position: relative;
+  /*left: 40%;*/
+}
+.song {
+  margin-top: 10px;
+}
+.song img {
+  height: 50px;
+  width: 50px;
+}
+
+.song-name {
+  position: absolute;
+  top: 10px;
+  left: 60px;
+}
+
+.artist-name {
+  position: relative;
+  color: #848181;
+  text-decoration: none;
+  left: 5px;
+
+}
+.artist-name:hover {
+  color: white;
+}

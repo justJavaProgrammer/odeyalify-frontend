@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div class="container">
+  <h1>Queue</h1>
+  <div class="queue">
+    <ul>
+      <p>Next up:</p>
+      <li *ngFor="let song of getSongQueue(); let index = index; ">
+        <div class="song">
+          <img src="{{song.songCoverImage}}">
+          <span class="song-name">{{song.songName}}</span>
+          <a routerLink="/artist/{{song.artistResponseDTO.artistId}}" class="artist-name">
+            {{song.artistResponseDTO.artistName}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
