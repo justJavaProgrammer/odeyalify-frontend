@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
 </head>
 <body>
 <div id="menu">
@@ -17,24 +16,23 @@
       Odeyalify
     </p>
     <div class="home">
-      <a href="/"><i class="fas fa-home" style="color: white; font-size: 20px;"></i><span class="home-text">Home</span></a>
+      <a routerLink="/" routerLinkActive="active"><i class="fas fa-home" style="color: white; font-size: 20px;" ></i><span class="home-text">Home</span></a>
       <br/>
     </div>
     <div class="search">
-      <a href="/search"> <i class="fas fa-search" style="color: white; font-size: 20px;"></i> <span class="search-text">Search</span></a>
+      <a routerLink="/search" routerLinkActive="active"> <i class="fas fa-search" style="color: white; font-size: 20px;"></i> <span class="search-text">Search</span></a>
       <br/>
     </div>
     <div class="library">
-      <a href="/library"> <i class="fas fa-align-justify" style="color: white; font-size:20px"></i> <span class="library-text">Your library</span></a>
+      <a routerLink="/library" routerLinkActive="active"> <i class="fas fa-align-justify" style="color: white; font-size:20px"></i> <span class="library-text">Your library</span></a>
       <br/>
     </div>
   </div>
-
   <div id="collections">
-    <a href="/create/playlist"> <i class="far fa-plus-square" style="color: white; font-size: 20px"></i> <span
+    <a routerLink="/create/playlist" routerLinkActive="active"> <i class="far fa-plus-square" style="color: white; font-size: 20px"></i> <span
       class="playlist-text">Create Playlist</span></a>
     <br/>
-    <a href="/collection/tracks"> <i class="fas fa-heart" style="color: white; font-size: 20px"></i> <span
+    <a routerLink="/collection/tracks" routerLinkActive="active"> <i class="fas fa-heart" style="color: white; font-size: 20px"></i> <span
       class="liked-tracks-text">Liked Tracks</span></a>
   </div>
   <div class="split-line">
@@ -44,6 +42,5 @@
       {{getUserPlaylist()}}
   </div>
 </div>
-
 </body>
 </html>
