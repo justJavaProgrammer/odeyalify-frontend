@@ -3,29 +3,59 @@
 <head>
   <title>Page Title</title>
   <link rel="stylesheet" href="audio-player.component.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+
 </head>
 <body>
 
-<div class="audio-player" >
+<div class="audio-player">
   <div class="song-info">
-    <img class="song-cover" id="audio-player" src="test.jpg" align="right">
+    <img class="song-cover" id="song-cover" src="{{getSongCover()}}">
     <div class="info">
-      <span>Song name</span> <br>
-      <a class="artist" href="http://localhost:4200/artist/id">Artist name</a>
+      <span>{{getTrackName()}}</span> <br>
+      <a class="artist" href="http://localhost:4200/artist/{{getArtistId()}}">{{getArtistName()}}</a>
     </div>
   </div>
   <div class="controls">
+    <button (click)="previousSong()"><i class="fas fa-step-backward prev" id="prev" style=" font-size: 13px"></i>
+    </button>
+    <button (click)="resumeOrPause()">
+      <i *ngIf="!isPlaying()" class="fas fa-play-circle" id="play-button" style="font-size: 30px">
+      </i>
+      <i *ngIf="isPlaying()" class="fas fa-pause-circle" style="font-size: 30px"></i>
+    </button>
+    <button (click)="nextSong()"><i class="fas fa-step-forward next" id="next" style="font-size: 13px"></i></button>
+  </div>
 
+  <!--  <div class="progress-bar" id="progress-bar">-->
+  <!--    <div class="progress" id="progress"></div>-->
+  <div class="time-progress">
+    <span class="current-time" id="current-time">{{setCurrentTime()}}</span>
+    <input type="range" class="time-range" id="time-range" min="0" max="100" step="1" value="0">
+    <div class="progress"></div>
+    <span class="duration">{{setDurationValue()}}</span>
+  </div>
+
+  <a routerLink="/queue" class="material-icons-outlined queue">
+    queue_music
+  </a>
+
+  <div class="volume-progress-bar" id="volume-progress-bar">
+    <i class="fas fa-volume-down icon" id="icon"></i>
+    <span class="progress-volume" id="volume"></span>
+    <input type="range" min="0" max="100" step="1" class="volume-progress" id="volume-progress">
+  </div>
+  <div class="context-menu">
+    <ul class="menu" id="context-menu">
+      <li class="item" id="artist-link">Go to artist</li>
+      <li class="item" id="album-link">Go to album</li>
+      <li class="item" id="copy-song">Copy song link</li>
+      <li class="item" id="save-to-liked">Save to liked tracks</li>
+    </ul>
   </div>
 </div>
-<div class="context-menu">
-  <ul class="menu" id="context-menu">
-    <li class="item">Go to artist</li>
-    <li class="item">Go to album</li>
-    <li class="item">Copy song link</li>
-    <li class="item">Save to liked tracks</li>
-  </ul>
-</div>
+
 <script src="context-menu/context-menu.js"></script>
 </body>
 </html>
