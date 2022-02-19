@@ -20,6 +20,7 @@ export class LoginPageService {
         localStorage.setItem('token', token);
         let refreshToken = userData.refreshToken;
         localStorage.setItem("refreshToken", refreshToken);
+        localStorage.setItem("userId", userData.information.userDto.userId);
         return userData;
       })
     )

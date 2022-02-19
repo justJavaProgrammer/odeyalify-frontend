@@ -8,27 +8,15 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validator, Validat
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  // invalidLogin: boolean = false;
   username: string = '';
   password: string = '';
-  // submitted: boolean = false;
-  // loginForm: FormGroup = new FormGroup({
-  //   username: new FormControl(''),
-  //   password: new FormControl('')
-  // });
+
   constructor(private loginService: LoginPageService) { }
 
   ngOnInit(): void {
   }
 
-  // get f(): { [key: string]: AbstractControl } {
-  //   return this.loginForm.controls;
-  // }
   login() {
-    // this.submitted = true;
-    // if (this.loginForm.invalid) {
-    //   return;
-    // }
     this.loginService.login(this.username, this.password).subscribe(data => {
 
     }, error => {

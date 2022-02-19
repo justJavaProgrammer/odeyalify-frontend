@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {Injectable, SkipSelf} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -27,4 +27,11 @@ export class HttpService {
     return this.httpClient.get<any>("http://localhost:8888/me/playlists/liked/")
   }
 
+  public getConnectedDevices() {
+    return this.httpClient.get<any>("http://localhost:8888/api/v3/devices/");
+  }
+
+  public getPlayerStateOnConnect() {
+    return this.httpClient.get<any>("http://localhost:8888/api/v3/state/player")
+  }
 }
