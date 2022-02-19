@@ -188,4 +188,61 @@ input[type=range]:hover::-webkit-slider-thumb {
 .queue:hover {
   color: white;
 }
+.volume {
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  color: #a7a2a2;
+  height: 4px;
+  width: 100px;
+}
+#full-screen {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 18px;
+  position: absolute;
+  right: 50px;
+  top: 40%;
+  color: white;
+}
+.device-icon, .device-icon button {
+  background-color: transparent;
+  border-color: transparent;
+  position: absolute;
+  right: 15%;
+  top: 30%;
+}
+.devices {
+  position: absolute;
+  right: 10%;
+  top: -300%;
+  background-color: #261d1d;
+  height: 300px;
+  width: 250px;
+}
 
+#title, #connect-desc {
+  text-align: center;
+}
+#device-name {
+  position: relative;
+  top: 20px;
+
+}
+
+.device {
+  background-color: #363030;
+  color: white;
+  width: 250px;
+  height: 50px;
+  font-size: 14px;
+}
+.device:hover {
+  filter: brightness(120%);
+}
+.active-device {
+  color: red;
+}
+.not-active-device {
+  color: #14a114;
+}

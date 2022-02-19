@@ -36,16 +36,40 @@
     <div class="progress"></div>
     <span class="duration">{{setDurationValue()}}</span>
   </div>
-
-  <a routerLink="/queue" class="material-icons-outlined queue">
-    queue_music
-  </a>
-
-  <div class="volume-progress-bar" id="volume-progress-bar">
-    <i class="fas fa-volume-down icon" id="icon"></i>
-    <span class="progress-volume" id="volume"></span>
-    <input type="range" min="0" max="100" step="1" class="volume-progress" id="volume-progress">
+  <div class="right">
+    <a routerLink="/queue" class="material-icons-outlined queue">
+      queue_music
+    </a>
+    <button class="switch-device device-icon">
+      <span class="material-icons-outlined " (click)="showConnectedDevices()">devices</span>
+    </button>
+    <div *ngIf="clicked" class="devices">
+      <div *ngIf="connectedDevices.length != 0">
+        <div class="device" *ngFor="let device of connectedDevices"
+             (click)="switchDevice(device.deviceId!)"
+             [ngStyle]="{'background-color': (device.active) ? 'red' : 'black'}">
+          <p id="device-name">{{device.deviceName}} {{device.deviceId}}</p>
+          <div *ngIf="device.active" class="active-device">
+            active
+          </div>
+          <div *ngIf="!device.active" [ngStyle]="{'color': 'white'}" class="not-active-device">
+            not-active
+          </div>
+        </div>
+      </div>
+      <div *ngIf="connectedDevices.length == 0">
+        <p id="title">Odeyalify connect</p>
+        <p id="connect-desc">Open odeyalify app on other device, and it magically appear here</p>
+      </div>
+    </div>
+    <input type="range" min="0" max="100" class="volume" id="volume">
+    <button (click)="openFullScreenMode()" id="full-screen"><i class="fas fa-expand-alt"></i></button>
   </div>
+  <!--  <div class="volume-progress-bar" id="volume-progress-bar">-->
+  <!--    <i class="fas fa-volume-down icon" id="icon"></i>-->
+  <!--    <span class="progress-volume" id="volume"></span>-->
+  <!--    <input type="range" min="0" max="100" step="1" class="volume-progress" id="volume-progress">-->
+  <!--  </div>-->
   <div class="context-menu">
     <ul class="menu" id="context-menu">
       <li class="item" id="artist-link">Go to artist</li>
