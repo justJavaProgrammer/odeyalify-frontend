@@ -44,7 +44,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginPageComponent,
-    [HomepageComponent, AudioPlayerComponent],
+    HomepageComponent,
     NotFoundComponent,
     SearchComponent,
     NavigationComponent,
@@ -62,7 +62,7 @@ const routes: Routes = [
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthHttpInterceptorService, multi: true},
-    {provide: BaseRouteReuseStrategy, useClass: AudioPlayerRouteReuseStrategy}
+    // {provide: BaseRouteReuseStrategy, useClass: AudioPlayerRouteReuseStrategy}
     // {provide: Test}
 
   ],
