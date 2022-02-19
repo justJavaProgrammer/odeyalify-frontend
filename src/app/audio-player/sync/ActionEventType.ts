@@ -1,0 +1,7 @@
+export enum ActionEventType {
+  PLAY = "PLAY",
+  PAUSE = "PAUSE",
+  VOLUME_CHANGE = "VOLUME_CHANGE",
+  DEVICE_SWITCH = "DEVICE_SWITCH",
+  SONG_CHANGE = "SONG_CHANGE",
+}
