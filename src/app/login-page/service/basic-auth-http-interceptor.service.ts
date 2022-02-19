@@ -15,6 +15,7 @@ export class BasicAuthHttpInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log("intercept  " + req.url);
     if (localStorage.getItem('token')) {
       req = this.addToken(req, this.authService.getJwtToken())
     }
